@@ -28,13 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Volga_IT_21.Core.csproj" />
-    <ProjectReference Include="..\ClassLibrary2\Volga_IT_21.BL.csproj" />
+    <ProjectReference Include="..\Volga_IT_21.BL\Volga_IT_21.BL.csproj" />
+    <ProjectReference Include="..\Volga_IT_21.Core\Volga_IT_21.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Volga_IT_21.ConsoleApp">
-      <HintPath>..\ConsoleApp1\bin\Release\net5.0\Volga_IT_21.ConsoleApp.dll</HintPath>
+      <HintPath>bin\Release\net5.0-windows\Volga_IT_21.ConsoleApp.dll</HintPath>
       <Private>true</Private>
     </Reference>
   </ItemGroup>

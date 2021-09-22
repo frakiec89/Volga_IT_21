@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volga_IT_21.WPF", "Volga_IT_21.WPF\Volga_IT_21.WPF.csproj", "{A440E011-556D-4822-91A9-3428621182A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volga_IT_21.Core", "ClassLibrary1\Volga_IT_21.Core.csproj", "{018D43CF-27DA-46D7-A537-02B61B044667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volga_IT_21.Core", "Volga_IT_21.Core\Volga_IT_21.Core.csproj", "{018D43CF-27DA-46D7-A537-02B61B044667}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volga_IT_21.BL", "ClassLibrary2\Volga_IT_21.BL.csproj", "{A0BDF810-1CC9-4D37-8742-6D21E5776215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volga_IT_21.BL", "Volga_IT_21.BL\Volga_IT_21.BL.csproj", "{A0BDF810-1CC9-4D37-8742-6D21E5776215}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
