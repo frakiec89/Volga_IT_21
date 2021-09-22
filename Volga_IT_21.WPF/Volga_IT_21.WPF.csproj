@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Remove="Style\Brushes.xaml" />
+    <Page Remove="Style\Core.xaml" />
+    <Page Remove="Style\Icons.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Style\Brushes.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Style\Core.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Style\Icons.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Volga_IT_21.Core.csproj" />
+    <ProjectReference Include="..\ClassLibrary2\Volga_IT_21.BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Volga_IT_21.ConsoleApp">
+      <HintPath>..\ConsoleApp1\bin\Release\net5.0\Volga_IT_21.ConsoleApp.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="Volga_IT_21.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Volga_IT_21.WPF"
+        mc:Ignorable="d" Margin="5"
+        Title="приложение, которое позволяет вывести статистику по количеству уникальных
+        слов в консоль для HTML страницы"
+        Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button Margin="5" Padding="5" Name="buttonOpen" Click="buttonOpen_Click">Выбрать файл</Button>
+            <Button Margin="5" Padding="5" Name="buttonOpenConsole" Click="buttonOpenConsole_Click" >Открыть консоль</Button>
+        </StackPanel>
+
+        <Border  BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="1" >
+            <TextBlock x:Name="textBlocContent">
+                
+            </TextBlock>
+            
+        </Border>
+        
+    </Grid>
+</Window>
