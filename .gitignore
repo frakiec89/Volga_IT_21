@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Custom ignores
+!*.dll
+# or
+!My.specific.dll
+
+# rest of .gitignore
