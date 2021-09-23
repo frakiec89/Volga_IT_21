@@ -33,10 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Volga_IT_21.ConsoleApp">
-      <HintPath>bin\Release\net5.0-windows\Volga_IT_21.ConsoleApp.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
+    <None Update="Volga_IT_21.ConsoleApp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
