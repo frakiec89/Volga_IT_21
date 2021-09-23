@@ -98,6 +98,7 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+
 # Chutzpah Test files
 _Chutzpah*
 
@@ -239,6 +240,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 orleans.codegen.cs
+*.dll
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
@@ -361,10 +363,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-
-# Custom ignores
-!*.dll
-# or
-!My.specific.dll
-
-# rest of .gitignore
