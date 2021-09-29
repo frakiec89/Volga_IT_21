@@ -35,7 +35,7 @@ namespace Volga_IT_21.BL
 
         public static string GroupString(string content)
         {
-            var masssivCar = new char[] { ' ', '\r', '\n', ',', '.', ':', '(', ')' }; // todo качество поиск
+            var masssivCar = new char[] { ' ', '\r', '\n', ',', '.', ';',':', '(', ')' }; // todo качество поиск
             List<string> contentList = content.Split(masssivCar).ToList();
             var newcontentList = new List<string>();
             foreach (var item in contentList)

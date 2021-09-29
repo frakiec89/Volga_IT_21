@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Volga_IT_21.BL
 {
     public class ReadHTML : Core.IReadHTML
     {
-
         /// <summary>
         /// чтение  файла HTML
         /// </summary>
@@ -25,14 +19,11 @@ namespace Volga_IT_21.BL
             {
                 throw new Exception(e.Message);
             }
-
         }
-
 
         private static string StreamMethod(string name)
         {
             string content = string.Empty;
-
             try
             {
                 using (FileStream fs = File.Open(name, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -40,8 +31,17 @@ namespace Volga_IT_21.BL
                 using (StreamReader sr = new StreamReader(bs))
                 {
                     string line;
+                    string bufer = string.Empty;
                     while ((line = sr.ReadLine()) != null)
                     {
+                        bufer += line;
+                        if (line.EndsWith(">"))
+                        {
+                            content += Parsing.HTML(bufer) + " ";
+                            bufer = string.Empty;
+                            continue;
+                        }
+
                         content += Parsing.HTML(line) +" ";
                     }
                     return Parsing.GroupString(content);
