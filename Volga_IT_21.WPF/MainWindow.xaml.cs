@@ -43,13 +43,13 @@ namespace Volga_IT_21.WPF
             OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "HTMLfiles (*.HTML)|*.HTML|All files (*.*)|*.*" };
             if (openFileDialog.ShowDialog() == true)
             {
-                textBlocContent.Text = string.Empty;
-                textBlocContent.Text = "подождите идет загрузка";
+                textBlocContent.Content = string.Empty;
+                textBlocContent.Content = "подождите идет загрузка";
                 var content = await Task.Run(() => RunAsync(openFileDialog.FileName));
 
                 if ( content != null)
                 {
-                    textBlocContent.Text = content;
+                    textBlocContent.Content = content;
                 }
             }
         }
@@ -85,7 +85,7 @@ namespace Volga_IT_21.WPF
             ConsoleHelper.AllocConsole();
             MethodInfo method = pr.GetMethod("StartMetod", BindingFlags.DeclaredOnly |
                 BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
-            method.Invoke(programObj, new object[] { textBlocContent.Text });
+            method.Invoke(programObj, new object[] { textBlocContent.Content });
 
         }
     }

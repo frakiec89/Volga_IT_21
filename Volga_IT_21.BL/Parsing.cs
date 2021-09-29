@@ -16,32 +16,31 @@ namespace Volga_IT_21.BL
         {
             try
             {
-                List<string> contentList = RegexMethod(contentHtml);
-                return GroupString(contentList);
+                return  RegexMethod(contentHtml); ;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-           
         }
 
-        private static List<string> RegexMethod(string contentHtml)
+        private static string RegexMethod(string contentHtml)
         {
-            var masssivCar = new char[] { ' ', '\r', '\n', ',', '.', ':' , '(' , ')' }; // todo качество поиска
-
-            string content = Regex.Replace(contentHtml, @"<[^>]+>|&nbsp;", "");
-            var contentList = content.Split(masssivCar).ToList();
-            return contentList;
+            if (string.IsNullOrWhiteSpace(contentHtml))
+            {
+                return null;
+            }
+            return  Regex.Replace(contentHtml, @"<[^>]+>|&nbsp;|<span>|&mdash|&raquo", string.Empty);
         }
 
-        private static string GroupString(List<string> contentList)
+        public static string GroupString(string content)
         {
+            var masssivCar = new char[] { ' ', '\r', '\n', ',', '.', ':', '(', ')' }; // todo качество поиск
+            List<string> contentList = content.Split(masssivCar).ToList();
             var newcontentList = new List<string>();
-
             foreach (var item in contentList)
             {
-                if (!string.IsNullOrWhiteSpace(item))
+                if (!string.IsNullOrEmpty(item))
                 {
                     newcontentList.Add(item);
                 }
@@ -55,8 +54,13 @@ namespace Volga_IT_21.BL
 
             foreach (var item in rez.OrderByDescending(x=>x.Count).ThenBy(x=>x.Name))
             {
-                rezList += $"{item.Name} - {item.Count} \n";
+                if (item.Name != null)
+                {
+                    rezList += $"{item.Name} - {item.Count} \n";
+                }
+              
             }
+
             return rezList;
         }
     }

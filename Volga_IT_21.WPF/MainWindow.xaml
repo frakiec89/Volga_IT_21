@@ -25,12 +25,19 @@
             <Button Margin="5" Padding="5" Name="buttonOpenConsole" Click="buttonOpenConsole_Click" >Открыть консоль</Button>
         </StackPanel>
 
-        <Border  BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="1" >
-            <TextBlock x:Name="textBlocContent">
-                
-            </TextBlock>
-            
+        <Border BorderBrush="Black"  BorderThickness="1" Grid.Row="1" Grid.Column="1" >
+            <ScrollViewer  >
+                <Label   VerticalAlignment="Top" VerticalContentAlignment="Top"
+                 ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                 x:Name="textBlocContent">
+                </Label>
+            </ScrollViewer>
         </Border>
         
+
+         
+       
+
     </Grid>
 </Window>

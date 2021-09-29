@@ -17,16 +17,9 @@ namespace Volga_IT_21.BL
         /// <returns>Контент в  виде необработанной  строки</returns>
         public   string  GetStringContent(string fileName)
         {
-            string line = string.Empty;
             try
             {
-                    line = StreamMethod(fileName);
-                    return Parsing.HTML(line);
-                
-            }
-            catch(OutOfMemoryException ex)
-            {
-                throw new Exception("Ошибка памяти " +  ex.Message);
+                return StreamMethod(fileName);
             }
             catch (Exception e)
             {
@@ -35,13 +28,29 @@ namespace Volga_IT_21.BL
 
         }
 
+
         private static string StreamMethod(string name)
         {
-            using (StreamReader sr = new StreamReader(name))
+            string content = string.Empty;
+
+            try
             {
-                return sr.ReadToEnd();
+                using (FileStream fs = File.Open(name, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (BufferedStream bs = new BufferedStream(fs))
+                using (StreamReader sr = new StreamReader(bs))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        content += Parsing.HTML(line) +" ";
+                    }
+                    return Parsing.GroupString(content);
+                }
             }
-               
+            catch (OutOfMemoryException ex)
+            {
+                throw new Exception("Ошибка памяти " + ex.Message);
+            }
         }
     }
 }
